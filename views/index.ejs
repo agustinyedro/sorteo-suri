@@ -1,0 +1,105 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rifa</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="/sobre-suri">Sobre suri</a>
+      <a href="#sorteo">Sorteo</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+  <div class="inicio">
+    <h1>Rifa a beneficio de <span>Suri</span></h1>
+    <div class="info-inicio">
+      <div class="texto">
+        <h2>Agradecemos tu apoyo</h2>
+        <p>Estamos realizado un sorte para ayudar a colectar dinero para los estudios previos y una intervencion
+          cardiologica para suri.
+          <br>
+          Cualquier persona puede participar.
+          <br>
+          Podes ayudarnos comprando numeros, hacer donaciones o compartiendo para que otros puedan participar.
+        </p>
+
+        <div class="botones">
+          <a href="#sorteo" class="btn-pedir">Sorteo</a>
+          <a href="#sorteo" class="btn-pedir">Donaciones</a>
+          <a href="#sorteo" class="btn-pedir">Compartir</a>
+        </div>
+      </div>
+      <img src="/img/suri.webp" alt="suri">
+    </div>
+  </div>
+
+
+  <div id="sorteo" class="sorteo">
+    <h2>Sorteo</h2>
+
+    <p class="info"> Para participar solo debes hacer click 👆 en el número/s disponibles <span
+        class="color-verde"></span> que quieras elegir y luego haz click en pedir números así nos avisa por WhatsApp.
+    </p>
+    <p class="info">Conoce los <a href="#premios">Premios</a></p>
+    <div class="numeros">
+      <% numeros.forEach(numero=> { %>
+        <button data-numero="<%= numero.numero %>" data-estado="<%= numero.estado %>" data-esadmin="<%= isAdmin %>"
+          data-nombre="<% if (isAdmin) { %><%= tachadoMap[numero.numero] ? tachadoMap[numero.numero][0].nombre : '' %><% } %>"
+          data-telefono="<% if (isAdmin) { %><%= tachadoMap[numero.numero] ? tachadoMap[numero.numero][0].telefono : '' %><% } %>"
+          title="<% if (isAdmin) { %><%= tachadoMap[numero.numero] ? tachadoMap[numero.numero].map(t => `Nombre: ${t.nombre}, Teléfono: ${t.telefono}`).join(' | ') : '' %><% } %>"
+          class="<%= numero.estado === 'tachado' ? 'tachado' : 'disponible' %>" <% if (!isAdmin &&
+          numero.estado==='tachado' ) { %>
+          disabled
+          <% } %>
+            >
+            <%= numero.numero %>
+        </button>
+        <% }); %>
+    </div>
+  </div>
+  <div id="premios" class="premios">
+    <h2>Premios Sorteo 12 de agosto 2024</h2>
+    <ol>
+      <li>
+        <p>Premio del <a href="https://www.instagram.com/elrincon.de.irma/" target="_blank">Rincon de Irma</a></p>
+      </li>
+      <li>
+        <p>Kit de nutrición (shampoo + crema nutrición) <a href="#">Peluqueria Natalia Manzzini</a></p>
+      </li>
+      <li>
+        <p>Uñas, masajes, limpieza facial o permanente de pestañas <a
+            href="https://www.instagram.com/bellesfemme.estetica/" target="_blank">Bellesfemme.Estetica </a>
+        </p>
+      </li>
+      <li>
+        <p>Regalo sorpresa de <a href="https://www.instagram.com/l_l.home/" target="_blank">L&L Home</a></p>
+      </li>
+      <li>
+        <p>Regalo de <a href="https://www.instagram.com/lindacatalina_/" target="_blank">Linda Catalina Ind.
+            Femenina </>(Voucher de $10000)</p>
+      </li>
+    </ol>
+    <p class="info">El mismo se realizara por la Lotería Nocturna de Cordoba el dia 12 de Agosto</p>
+  </div>
+  <div id="details-popup" class="details-popup"></div>
+
+  <% if (!isAdmin) { %>
+    <a id="sendButton" class="send-button" href="#">Pedir números</a>
+    <% } else { %>
+      <a id="formButton" class="send-button" href="#">Tachar</a>
+      <% } %>
+
+        <footer>
+          <p>Realizo por Agustin Yedro para <i>Suri</i> con 🧡</p>
+        </footer>
+        <script src="/js/script.js"></script>
+</body>
+
+</html>
