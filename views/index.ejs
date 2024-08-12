@@ -30,16 +30,44 @@
         .texto-svg {
           font-family: 'Outfit', sans-serif;
         }
+
+        .rect-top {
+          animation: slideInLeft 2s ease-out forwards;
+        }
+
+        .rect-bottom {
+          animation: slideInRight 2s ease-out forwards;
+        }
+
+        @keyframes slideInLeft {
+          from {
+            transform: translateX(-100%);
+          }
+
+          to {
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes slideInRight {
+          from {
+            transform: translateX(100%);
+          }
+
+          to {
+            transform: translateX(0);
+          }
+        }
       </style>
       <g id="uuid-76498566-83da-4bee-8b54-c48f1b850f4a">
-        <rect x="784" width="1136" height="310" style="fill:#4B4068;" />
-        <rect y="309.09" width="1257" height="321" style="fill:#4B4068;" />
+        <rect class="rect-top" x="784" width="1136" height="310" style="fill:#4B4068;" />
+        <rect class="rect-bottom" y="309.09" width="1257" height="321" style="fill:#4B4068;" />
         <text transform="translate(110.95 240.78)" class="texto-svg"
           style="font-family:Outfit-ExtraBold, Outfit; font-size:235px;">
           <tspan x="0" y="0" style="fill:#fff;">Ri</tspan>
           <tspan x="220.43" y="0" style="fill:#fff; letter-spacing:-.02em;">f</tspan>
           <tspan x="322.18" y="0" style="fill:#fff;">a a</tspan>
-          <tspan x="649.06" y="0" style="letter-spacing:0em;"> </tspan>
+          <tspan x="649.06" y="0" style="letter-spacing:0em;"></tspan>
           <tspan x="692.54" y="0" style="fill:#ffa17f;">ben</tspan>
           <tspan x="1101.43" y="0" style="fill:#ffa17f; letter-spacing:0em;">e</tspan>
           <tspan x="1229.51" y="0" style="fill:#ffa17f; letter-spacing:0em;">ficio</tspan>
