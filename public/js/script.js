@@ -130,3 +130,16 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+function copiarAlPortapapeles(id) {
+
+  const text = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    const copiadoPopup = document.getElementById('copiado-popup');
+    copiadoPopup.style.display = 'flex';
+    setTimeout(() => {
+      copiadoPopup.style.display = 'none';
+    }, 1500);
+  }).catch(err => {
+    console.error('Error al copiar: ', err);
+  });
+}

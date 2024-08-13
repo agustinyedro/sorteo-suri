@@ -10,6 +10,7 @@
      --colorbtn2: #6B5B95;
      --colorbtn: #2c2c2c;
      --colornav: #F7EEDD;
+     --title-celu: 2.5rem;
  }
 
  * {
@@ -80,6 +81,7 @@
              .texto {
                  height: 100%;
                  display: flex;
+
                  flex-direction: column;
                  justify-content: space-evenly;
                  gap: 3rem;
@@ -251,6 +253,8 @@
 
      .premios {
 
+         margin-bottom: 5rem;
+
          h2 {
              color: var(--colordark);
              text-align: center;
@@ -302,6 +306,68 @@
          }
      }
 
+     .ganadores {
+
+         margin-bottom: 5rem;
+
+         h2 {
+
+             color: var(--colordark);
+             text-align: center;
+             font-size: 4.5rem;
+             margin-bottom: 5rem;
+         }
+
+         p {
+             color: var(--colordark);
+             text-align: center;
+             font-size: 1.5rem;
+             margin-bottom: 5rem;
+         }
+
+     }
+
+     .contacto {
+         margin-bottom: 5rem;
+
+         h2 {
+
+             color: var(--colordark);
+             text-align: center;
+             font-size: 4.5rem;
+             margin-bottom: 5rem;
+         }
+
+         table {
+             width: 50vw;
+             margin: 2rem auto;
+             font-size: 2rem;
+
+             th,
+             td {
+                 color: var(--colordark);
+                 padding: 0.5rem;
+                 text-align: center;
+
+                 &.copiar-al-portapapeles {
+                     cursor: pointer;
+
+                     svg {
+                         opacity: 0;
+                     }
+
+                     &:hover {
+                         opacity: 0.8;
+
+                         svg {
+                             opacity: 1;
+                         }
+                     }
+                 }
+             }
+         }
+     }
+
      .send-button {
          position: fixed;
          top: 10px;
@@ -314,6 +380,27 @@
          border-radius: 5px;
          cursor: pointer;
          text-decoration: none;
+         display: none;
+         /* Ocultar inicialmente */
+     }
+
+     .copiado-popup {
+         position: fixed;
+         top: 10vh;
+         left: 50vw;
+         transform: translateX(-50%);
+         width: 30vw;
+         height: 10vh;
+         color: #ccc;
+         font-size: 1.5rem;
+
+         align-items: center;
+         justify-content: center;
+
+         border-radius: 5px;
+         box-shadow: 0 0 10px #ccc;
+
+         background-color: var(--colorbtn);
          display: none;
          /* Ocultar inicialmente */
      }
@@ -520,14 +607,15 @@
 
              align-items: center;
 
-             h1 {
-                 font-size: 3rem;
+             svg {
+                 margin-bottom: 5rem;
              }
 
              .info-inicio {
                  flex-direction: column-reverse;
                  justify-content: center;
                  align-items: center;
+                 gap: 5rem;
 
 
                  .texto {
@@ -536,25 +624,60 @@
                      align-items: center;
                      text-align: justify;
                      gap: 1rem;
+
+                     h2 {
+                         font-size: var(--title-celu)
+                     }
                  }
 
                  .botones {
+                     margin-top: 5rem;
 
                      width: 90vw;
-                     align-items: flex-start;
+                     align-items: center;
                      justify-content: center;
                      flex-wrap: wrap;
+
+
+
+                     .btn-pedir {
+                         justify-content: space-between;
+                         align-items: baseline;
+                         width: 100%;
+                         height: 10vh;
+                         padding-top: 1.5rem;
+
+                         svg {
+                             width: 15vh;
+                         }
+                     }
 
                  }
 
                  img {
+                     margin: 5rem auto;
                      text-align: center;
                      width: 80vw;
-                     height: 60vh;
+                     height: 40vh;
                  }
              }
 
 
+         }
+
+         .sorteo {
+             width: 100vw;
+             margin-top: 23rem;
+
+             h2 {
+                 font-size: var(--title-celu);
+             }
+         }
+
+         .premios {
+             h2 {
+                 font-size: var(--title-celu);
+             }
          }
      }
 
