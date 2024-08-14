@@ -155,15 +155,51 @@ document.addEventListener('DOMContentLoaded',() => {
 
 });
 function copiarAlPortapapeles(id) {
-
   const text = document.getElementById(id).innerText;
-  navigator.clipboard.writeText(text).then(() => {
-    const copiadoPopup = document.getElementById('copiado-popup');
-    copiadoPopup.style.display = 'flex';
-    setTimeout(() => {
-      copiadoPopup.style.display = 'none';
-    }, 1500);
-  }).catch(err => {
-    console.error('Error al copiar: ', err);
-  });
+
+  // Intentar copiar usando la API del portapapeles
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(() => {
+      mostrarPopup();
+    }).catch(err => {
+      console.error('Error al copiar con clipboard API: ', err);
+      copiarConExecCommand(text); // Fallback si falla
+    });
+  } else {
+    // Si la API de clipboard no está disponible, usar el fallback
+    copiarConExecCommand(text);
+  }
+}
+
+function copiarConExecCommand(text) {
+  // Crear un campo de texto temporal
+  const inputTemporal = document.createElement('textarea');
+  inputTemporal.value = text;
+
+  // Añadirlo al DOM
+  document.body.appendChild(inputTemporal);
+
+  // Seleccionar el contenido del campo de texto
+  inputTemporal.select();
+  inputTemporal.setSelectionRange(0, 99999); // Para dispositivos móviles
+
+  try {
+    // Ejecutar el comando de copiar
+    document.execCommand('copy');
+    console.log('Texto copiado al portapapeles usando execCommand');
+    mostrarPopup();
+  } catch (err) {
+    console.error('Error al copiar con execCommand: ', err);
+  }
+
+  // Eliminar el campo de texto temporal
+  document.body.removeChild(inputTemporal);
+}
+
+function mostrarPopup() {
+  const copiadoPopup = document.getElementById('copiado-popup');
+  copiadoPopup.style.display = 'flex';
+  setTimeout(() => {
+    copiadoPopup.style.display = 'none';
+  }, 1500);
 }
