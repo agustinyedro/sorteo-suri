@@ -318,11 +318,40 @@
              margin-bottom: 5rem;
          }
 
-         p {
-             color: var(--colordark);
-             text-align: center;
-             font-size: 1.5rem;
-             margin-bottom: 5rem;
+         table {
+             width: 50vw;
+             margin: 2rem auto;
+             font-size: 2rem;
+             background-color: #3333333f;
+             border-radius: 0.5rem;
+             box-shadow: 0 0 10px #333;
+
+             tr {
+
+                 &.impar {
+                     width: 100%;
+                     background-color: #ccc;
+
+                     td {
+
+                         color: #00223E;
+                         outline: 1px solid #ccc;
+
+                     }
+                 }
+
+
+                 td {
+
+                     color: var(--colordark);
+                     padding: 0.5rem;
+                     text-align: center;
+
+
+
+
+                 }
+             }
          }
 
      }
@@ -674,9 +703,48 @@
              }
          }
 
+         .ganadores {
+             h2 {
+                 font-size: var(--title-celu);
+             }
+
+             table {
+                 width: 90vw;
+
+                 td {
+                     font-size: 1.5rem;
+                 }
+             }
+         }
+
          .premios {
              h2 {
                  font-size: var(--title-celu);
+             }
+
+             .premios-list {
+                 width: 80vw;
+                 margin: 2rem auto;
+
+                 .premios-card {
+                     min-width: 80vw;
+                     text-align: center;
+                 }
+             }
+         }
+
+         .contacto {
+             h2 {
+                 font-size: var(--title-celu);
+             }
+
+             table {
+                 width: 90vw;
+                 margin: auto;
+
+                 td {
+                     font-size: 1.5rem;
+                 }
              }
          }
      }

@@ -123,7 +123,8 @@
           <path
             d="M160-80v-440H80v-240h208q-5-9-6.5-19t-1.5-21q0-50 35-85t85-35q23 0 43 8.5t37 23.5q17-16 37-24t43-8q50 0 85 35t35 85q0 11-2 20.5t-6 19.5h208v240h-80v440H160Zm400-760q-17 0-28.5 11.5T520-800q0 17 11.5 28.5T560-760q17 0 28.5-11.5T600-800q0-17-11.5-28.5T560-840Zm-200 40q0 17 11.5 28.5T400-760q17 0 28.5-11.5T440-800q0-17-11.5-28.5T400-840q-17 0-28.5 11.5T360-800ZM160-680v80h280v-80H160Zm280 520v-360H240v360h200Zm80 0h200v-360H520v360Zm280-440v-80H520v80h280Z" />
         </svg></a></p>
-    <div class="numeros">
+
+    <!-- <div class="numeros">
       <% numeros.forEach(numero=> { %>
         <button data-numero="<%= numero.numero %>" data-estado="<%= numero.estado %>" data-esadmin="<%= isAdmin %>"
           data-nombre="<% if (isAdmin) { %><%= tachadoMap[numero.numero] ? tachadoMap[numero.numero][0].nombre : '' %><% } %>"
@@ -137,7 +138,38 @@
             <%= numero.numero %>
         </button>
         <% }); %>
-    </div>
+    </div> -->
+  </div>
+
+  <div id="ganadores" class="ganadores">
+    <h2>Ganadores</h2>
+    <table>
+      <tr class="impar">
+        <td>1er</td>
+        <td>20</td>
+        <td>Mariano Virche</td>
+      </tr>
+      <tr>
+        <td>2do</td>
+        <td>01</td>
+        <td>Diego Muñoz</td>
+      </tr>
+      <tr class="impar">
+        <td>3er</td>
+        <td>83</td>
+        <td>Diego Salguero</td>
+      </tr>
+      <tr>
+        <td>4to</td>
+        <td>75</td>
+        <td>Elba Primo</td>
+      </tr>
+      <tr class="impar">
+        <td>5to</td>
+        <td>81</td>
+        <td>Norma Primo</td>
+      </tr>
+    </table>
   </div>
 
   <div id="premios" class="premios">
@@ -165,10 +197,7 @@
     </div>
   </div>
 
-  <div id="ganadores" class="ganadores">
-    <h2>Ganadores</h2>
-    <p>🎉Aqui aparecenran los ganadores del sorteo🎉</p>
-  </div>
+
 
   <div id="contacto" class="contacto">
     <h2>Formas de contacto</h2>
