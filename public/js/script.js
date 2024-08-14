@@ -130,6 +130,30 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+
+
+document.addEventListener('DOMContentLoaded',() => {
+  
+
+  const agustin = document.getElementById('agustin');
+
+  agustin.addEventListener('click', () => {
+    copiarAlPortapapeles('agustin');
+  });
+  
+  const jorgelina = document.getElementById('jorgelina');
+
+  jorgelina.addEventListener('click', () => {
+    copiarAlPortapapeles('jorgelina');
+  });
+  
+  const alias = document.getElementById('alias');
+
+  alias.addEventListener('click', () => {
+    copiarAlPortapapeles('alias');
+  });
+
+});
 function copiarAlPortapapeles(id) {
 
   const text = document.getElementById(id).innerText;
