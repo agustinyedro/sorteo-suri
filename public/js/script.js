@@ -132,7 +132,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-document.addEventListener('DOMContentLoaded',() => {
+document.addEventListener('DOMContentLoaded', () => {
+  
+  const btnShare = document.getElementById('btn-share');
+  const shareOptions = document.getElementById('share-options');
+
+  shareOptions.addEventListener('mouseleave', () => {
+    cerrarShareOptions();
+  });
+  shareOptions.addEventListener('click', () => {
+    cerrarShareOptions();
+  });
+
+  btnShare.addEventListener('mouseleave', () => {
+    setTimeout(() => {
+      cerrarShareOptions();
+    },3000);
+  });
+
+  btnShare.addEventListener('mouseenter', () => {
+    toggleShareOptions();
+  });
+  
+  btnShare.addEventListener('click', () => {
+    if (shareOptions.classList.contains('hidden')) {
+      toggleShareOptions();
+    } else {
+      shareOptions.classList.remove('hidden');
+    }
+  });
   
 
   const agustin = document.getElementById('agustin');
@@ -202,4 +230,14 @@ function mostrarPopup() {
   setTimeout(() => {
     copiadoPopup.style.display = 'none';
   }, 1500);
+}
+
+function toggleShareOptions() {
+  const shareOptions = document.getElementById('share-options');
+  shareOptions.classList.toggle('hidden');
+}
+
+function cerrarShareOptions() {
+  const shareOptions = document.getElementById('share-options');
+  shareOptions.classList.add('hidden');
 }

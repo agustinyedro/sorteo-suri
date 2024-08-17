@@ -99,7 +99,9 @@
 
 
 
+
              .botones {
+                 position: relative;
                  display: flex;
                  width: 100%;
                  gap: 1rem;
@@ -119,17 +121,45 @@
                      color: #fff;
                      text-decoration: none;
 
-
                      &:hover {
                          opacity: 0.8;
 
                          svg {
                              animation: move-icon 0.5s ease-in-out infinite;
                          }
-
                      }
                  }
              }
+
+             .share-options {
+                 position: absolute;
+                 top: 0;
+                 left: 50%;
+                 width: 30%;
+                 height: 100%;
+                 transform: translateY(-110%) translateX(0);
+                 padding: 0 2rem;
+                 background-color: #333;
+                 display: flex;
+                 align-items: center;
+                 justify-content: space-evenly;
+                 gap: 1rem;
+                 border-radius: 0.5rem;
+                 transition: all 0.5s ease-in-out;
+
+                 &:hover {
+                     opacity: 1;
+                     visibility: visible;
+                 }
+
+                 &.hidden {
+                     opacity: 0;
+                     visibility: hidden;
+                 }
+
+
+             }
+
 
              img {
                  border-radius: 50%;
