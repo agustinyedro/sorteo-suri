@@ -1,179 +1,301 @@
 <!-- views/index.ejs -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Rifa a beneficio de Suri." />
+    <meta name="author" content="Agustin Yedro" />
+    <meta name="keywords" content="rifa, suri, beneficio" />
+    <title>Rifa</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Rifa a beneficio de Suri.">
-  <meta name="author" content="Agustin Yedro">
-  <meta name="keywords" content="rifa, suri, beneficio">
+  <body>
+    <header>
+      <nav>
+        <a href="/sobre-suri">Sobre suri</a>
+        <a href="#sorteo">Sorteo</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
 
-  <title>Rifa</title>
-  <link rel="stylesheet" href="/css/styles.css" />
-</head>
-
-<body>
-  <header>
-    <nav>
-      <a href="/sobre-suri">Sobre suri</a>
-      <a href="#sorteo">Sorteo</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </header>
-
-  <div class="inicio">
-    <!-- <h1>Rifa a <span class="span-1">beneficio</span>
+    <div class="inicio">
+      <!-- <h1>Rifa a <span class="span-1">beneficio</span>
       <br>
       <span class="span-2">de </span> Suri
     </h1> -->
-    <svg id="uuid-ee72d653-9614-4916-9749-d65a15614b37" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 651.36">
-      <style>
-        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@800&display=swap');
+      <svg
+        id="uuid-ee72d653-9614-4916-9749-d65a15614b37"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1920 651.36"
+      >
+        <style>
+          @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@800&display=swap");
 
-        .texto-svg {
-          font-family: 'Outfit', sans-serif;
-        }
-
-        .rect-top {
-          animation: slideInLeft 2s ease-out forwards;
-        }
-
-        .rect-bottom {
-          animation: slideInRight 2s ease-out forwards;
-        }
-
-        @keyframes slideInLeft {
-          from {
-            transform: translateX(-100%);
+          .texto-svg {
+            font-family: "Outfit", sans-serif;
           }
 
-          to {
-            transform: translateX(0);
-          }
-        }
-
-        @keyframes slideInRight {
-          from {
-            transform: translateX(100%);
+          .rect-top {
+            animation: slideInLeft 2s ease-out forwards;
           }
 
-          to {
-            transform: translateX(0);
+          .rect-bottom {
+            animation: slideInRight 2s ease-out forwards;
           }
-        }
-      </style>
-      <g id="uuid-76498566-83da-4bee-8b54-c48f1b850f4a">
-        <rect class="rect-top" x="784" width="1136" height="310" style="fill:#4B4068;" />
-        <rect class="rect-bottom" y="309.09" width="1257" height="321" style="fill:#4B4068;" />
-        <text transform="translate(110.95 240.78)" class="texto-svg"
-          style="font-family:Outfit-ExtraBold, Outfit; font-size:235px;">
-          <tspan x="0" y="0" style="fill:#fff;">Ri</tspan>
-          <tspan x="220.43" y="0" style="fill:#fff; letter-spacing:-.02em;">f</tspan>
-          <tspan x="322.18" y="0" style="fill:#fff;">a a</tspan>
-          <tspan x="649.06" y="0" style="letter-spacing:0em;"></tspan>
-          <tspan x="692.54" y="0" style="fill:#ffa17f;">ben</tspan>
-          <tspan x="1101.43" y="0" style="fill:#ffa17f; letter-spacing:0em;">e</tspan>
-          <tspan x="1229.51" y="0" style="fill:#ffa17f; letter-spacing:0em;">ficio</tspan>
-        </text>
-        <text transform="translate(959.95 554.31)" style="font-family:Outfit-ExtraBold, Outfit; font-size:235px;">
-          <tspan x="0" y="0" style="fill:#ffa17f;">de </tspan>
-          <tspan x="315.37" y="0" style="fill:#fff;">Su</tspan>
-          <tspan x="584.67" y="0" style="fill:#fff; letter-spacing:-.02em;">r</tspan>
-          <tspan x="686.9" y="0" style="fill:#fff; letter-spacing:0em;">i</tspan>
-        </text>
-      </g>
-    </svg>
-    <div class="info-inicio">
-      <div class="texto">
-        <h2>Tu apoyo es de mucha ayuda</h2>
-        <p>Estamos realizado un sorteo para ayudar a colectar dinero para los estudios previos y una intervención
-          cardiologica para suri.
-          <br>
-          Cualquier persona puede participar.
-          <br>
-          Podes ayudarnos comprando numeros, hacer donaciones o compartiendo para que otros puedan participar.
-        </p>
 
-        <div class="botones">
-          <a href="#sorteo" class="btn-pedir">Sorteo
-            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#ccc">
-              <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
-            </svg>
-          </a>
-          <a href="#contacto" class="btn-pedir">Donaciones
-            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#ccc">
-              <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
-            </svg>
-          </a>
-          <a class="btn-pedir" id="btn-share">Compartir
-            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#ccc">
-              <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
-            </svg>
-          </a>
-          <div id="share-options" class="share-options hidden">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=surisorteo.alwaysdata.net" target="_blank">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="url(#a)" height="32" width="32">
-                <defs>
-                  <linearGradient x1="50%" x2="50%" y1="97.078%" y2="0%" id="a">
-                    <stop offset="0%" stop-color="#0062E0" />
-                    <stop offset="100%" stop-color="#19AFFF" />
-                  </linearGradient>
-                </defs>
+          @keyframes slideInLeft {
+            from {
+              transform: translateX(-100%);
+            }
+
+            to {
+              transform: translateX(0);
+            }
+          }
+
+          @keyframes slideInRight {
+            from {
+              transform: translateX(100%);
+            }
+
+            to {
+              transform: translateX(0);
+            }
+          }
+        </style>
+        <g id="uuid-76498566-83da-4bee-8b54-c48f1b850f4a">
+          <rect
+            class="rect-top"
+            x="784"
+            width="1136"
+            height="310"
+            style="fill: #4b4068"
+          />
+          <rect
+            class="rect-bottom"
+            y="309.09"
+            width="1257"
+            height="321"
+            style="fill: #4b4068"
+          />
+          <text
+            transform="translate(110.95 240.78)"
+            class="texto-svg"
+            style="font-family: Outfit-ExtraBold, Outfit; font-size: 235px"
+          >
+            <tspan x="0" y="0" style="fill: #fff">Ri</tspan>
+            <tspan x="220.43" y="0" style="fill: #fff; letter-spacing: -0.02em">
+              f
+            </tspan>
+            <tspan x="322.18" y="0" style="fill: #fff">a a</tspan>
+            <tspan x="649.06" y="0" style="letter-spacing: 0em"></tspan>
+            <tspan x="692.54" y="0" style="fill: #ffa17f">ben</tspan>
+            <tspan x="1101.43" y="0" style="fill: #ffa17f; letter-spacing: 0em">
+              e
+            </tspan>
+            <tspan x="1229.51" y="0" style="fill: #ffa17f; letter-spacing: 0em">
+              ficio
+            </tspan>
+          </text>
+          <text
+            transform="translate(959.95 554.31)"
+            style="font-family: Outfit-ExtraBold, Outfit; font-size: 235px"
+          >
+            <tspan x="0" y="0" style="fill: #ffa17f">de</tspan>
+            <tspan x="315.37" y="0" style="fill: #fff">Su</tspan>
+            <tspan x="584.67" y="0" style="fill: #fff; letter-spacing: -0.02em">
+              r
+            </tspan>
+            <tspan x="686.9" y="0" style="fill: #fff; letter-spacing: 0em">
+              i
+            </tspan>
+          </text>
+        </g>
+      </svg>
+      <div class="info-inicio">
+        <div class="texto">
+          <h2>Tu apoyo es de mucha ayuda</h2>
+          <p>
+            Estamos realizado un sorteo para ayudar a colectar dinero para los
+            estudios previos y una intervención cardiologica para suri.
+            <br />
+            Cualquier persona puede participar.
+            <br />
+            Podes ayudarnos comprando numeros, hacer donaciones o compartiendo
+            para que otros puedan participar.
+          </p>
+
+          <div class="botones">
+            <a href="#sorteo" class="btn-pedir"
+              >Sorteo
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="20px"
+                viewBox="0 -960 960 960"
+                width="20px"
+                fill="#ccc"
+              >
                 <path
-                  d="M15 35.8C6.5 34.3 0 26.9 0 18 0 8.1 8.1 0 18 0s18 8.1 18 18c0 8.9-6.5 16.3-15 17.8l-1-.8h-4l-1 .8z" />
-                <path fill="#FFF"
-                  d="m25 23 .8-5H21v-3.5c0-1.4.5-2.5 2.7-2.5H26V7.4c-1.3-.2-2.7-.4-4-.4-4.1 0-7 2.5-7 7v4h-4.5v5H15v12.7c1 .2 2 .3 3 .3s2-.1 3-.3V23h4z" />
+                  d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"
+                />
               </svg>
             </a>
-            <a href="https://twitter.com/intent/tweet?url=surisorteo.alwaysdata.net&text=Este es mi mensaje preestablecido"
-              target="_blank">
-              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="32" fill="none" viewBox="0 0 1200 1227">
-                <path fill="#fff"
-                  d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z" />
-              </svg></a>
-            <a href="https://www.linkedin.com/sharing/share-offsite/?url=surisorteo.alwaysdata.net" target="_blank">
-              <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid"
-                viewBox="0 0 256 256">
+            <a href="#contacto" class="btn-pedir"
+              >Donaciones
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="20px"
+                viewBox="0 -960 960 960"
+                width="20px"
+                fill="#ccc"
+              >
                 <path
-                  d="M218.123 218.127h-37.931v-59.403c0-14.165-.253-32.4-19.728-32.4-19.756 0-22.779 15.434-22.779 31.369v60.43h-37.93V95.967h36.413v16.694h.51a39.907 39.907 0 0 1 35.928-19.733c38.445 0 45.533 25.288 45.533 58.186l-.016 67.013ZM56.955 79.27c-12.157.002-22.014-9.852-22.016-22.009-.002-12.157 9.851-22.014 22.008-22.016 12.157-.003 22.014 9.851 22.016 22.008A22.013 22.013 0 0 1 56.955 79.27m18.966 138.858H37.95V95.967h37.97v122.16ZM237.033.018H18.89C8.58-.098.125 8.161-.001 18.471v219.053c.122 10.315 8.576 18.582 18.89 18.474h218.144c10.336.128 18.823-8.139 18.966-18.474V18.454c-.147-10.33-8.635-18.588-18.966-18.453"
-                  fill="#0A66C2" />
+                  d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"
+                />
               </svg>
             </a>
-            <a href="https://wa.me/?text=Podes ayudar a suri entrando a el siguiente link%20http://surisorteo.alwaysdata.net"
-              target="_blank">
-              <svg viewBox="0 0 256 259" width="30" height="32" xmlns="http://www.w3.org/2000/svg"
-                preserveAspectRatio="xMidYMid">
+            <a class="btn-pedir" id="btn-share"
+              >Compartir
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="20px"
+                viewBox="0 -960 960 960"
+                width="20px"
+                fill="#ccc"
+              >
                 <path
-                  d="m67.663 221.823 4.185 2.093c17.44 10.463 36.971 15.346 56.503 15.346 61.385 0 111.609-50.224 111.609-111.609 0-29.297-11.859-57.897-32.785-78.824-20.927-20.927-48.83-32.785-78.824-32.785-61.385 0-111.61 50.224-110.912 112.307 0 20.926 6.278 41.156 16.741 58.594l2.79 4.186-11.16 41.156 41.853-10.464Z"
-                  fill="#00E676" />
-                <path
-                  d="M219.033 37.668C195.316 13.254 162.531 0 129.048 0 57.898 0 .698 57.897 1.395 128.35c0 22.322 6.278 43.947 16.742 63.478L0 258.096l67.663-17.439c18.834 10.464 39.76 15.347 60.688 15.347 70.453 0 127.653-57.898 127.653-128.35 0-34.181-13.254-66.269-36.97-89.986ZM129.048 234.38c-18.834 0-37.668-4.882-53.712-14.648l-4.185-2.093-40.458 10.463 10.463-39.76-2.79-4.186C7.673 134.63 22.322 69.058 72.546 38.365c50.224-30.692 115.097-16.043 145.79 34.181 30.692 50.224 16.043 115.097-34.18 145.79-16.045 10.463-35.576 16.043-55.108 16.043Zm61.385-77.428-7.673-3.488s-11.16-4.883-18.136-8.371c-.698 0-1.395-.698-2.093-.698-2.093 0-3.488.698-4.883 1.396 0 0-.697.697-10.463 11.858-.698 1.395-2.093 2.093-3.488 2.093h-.698c-.697 0-2.092-.698-2.79-1.395l-3.488-1.395c-7.673-3.488-14.648-7.674-20.229-13.254-1.395-1.395-3.488-2.79-4.883-4.185-4.883-4.883-9.766-10.464-13.253-16.742l-.698-1.395c-.697-.698-.697-1.395-1.395-2.79 0-1.395 0-2.79.698-3.488 0 0 2.79-3.488 4.882-5.58 1.396-1.396 2.093-3.488 3.488-4.883 1.395-2.093 2.093-4.883 1.395-6.976-.697-3.488-9.068-22.322-11.16-26.507-1.396-2.093-2.79-2.79-4.883-3.488H83.01c-1.396 0-2.79.698-4.186.698l-.698.697c-1.395.698-2.79 2.093-4.185 2.79-1.395 1.396-2.093 2.79-3.488 4.186-4.883 6.278-7.673 13.951-7.673 21.624 0 5.58 1.395 11.161 3.488 16.044l.698 2.093c6.278 13.253 14.648 25.112 25.81 35.575l2.79 2.79c2.092 2.093 4.185 3.488 5.58 5.58 14.649 12.557 31.39 21.625 50.224 26.508 2.093.697 4.883.697 6.976 1.395h6.975c3.488 0 7.673-1.395 10.464-2.79 2.092-1.395 3.487-1.395 4.882-2.79l1.396-1.396c1.395-1.395 2.79-2.092 4.185-3.487 1.395-1.395 2.79-2.79 3.488-4.186 1.395-2.79 2.092-6.278 2.79-9.765v-4.883s-.698-.698-2.093-1.395Z"
-                  fill="#FFF" />
+                  d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"
+                />
               </svg>
             </a>
+            <div id="share-options" class="share-options hidden">
+              <a
+                href="https://www.facebook.com/sharer/sharer.php?u=surisorteo.alwaysdata.net"
+                target="_blank"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 36 36"
+                  fill="url(#a)"
+                  height="32"
+                  width="32"
+                >
+                  <defs>
+                    <linearGradient
+                      x1="50%"
+                      x2="50%"
+                      y1="97.078%"
+                      y2="0%"
+                      id="a"
+                    >
+                      <stop offset="0%" stop-color="#0062E0" />
+                      <stop offset="100%" stop-color="#19AFFF" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    d="M15 35.8C6.5 34.3 0 26.9 0 18 0 8.1 8.1 0 18 0s18 8.1 18 18c0 8.9-6.5 16.3-15 17.8l-1-.8h-4l-1 .8z"
+                  />
+                  <path
+                    fill="#FFF"
+                    d="m25 23 .8-5H21v-3.5c0-1.4.5-2.5 2.7-2.5H26V7.4c-1.3-.2-2.7-.4-4-.4-4.1 0-7 2.5-7 7v4h-4.5v5H15v12.7c1 .2 2 .3 3 .3s2-.1 3-.3V23h4z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://twitter.com/intent/tweet?url=surisorteo.alwaysdata.net&text=Este es mi mensaje preestablecido"
+                target="_blank"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="32"
+                  fill="none"
+                  viewBox="0 0 1200 1227"
+                >
+                  <path
+                    fill="#fff"
+                    d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z"
+                  /></svg
+              ></a>
+              <a
+                href="https://www.linkedin.com/sharing/share-offsite/?url=surisorteo.alwaysdata.net"
+                target="_blank"
+              >
+                <svg
+                  width="32"
+                  height="32"
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="xMidYMid"
+                  viewBox="0 0 256 256"
+                >
+                  <path
+                    d="M218.123 218.127h-37.931v-59.403c0-14.165-.253-32.4-19.728-32.4-19.756 0-22.779 15.434-22.779 31.369v60.43h-37.93V95.967h36.413v16.694h.51a39.907 39.907 0 0 1 35.928-19.733c38.445 0 45.533 25.288 45.533 58.186l-.016 67.013ZM56.955 79.27c-12.157.002-22.014-9.852-22.016-22.009-.002-12.157 9.851-22.014 22.008-22.016 12.157-.003 22.014 9.851 22.016 22.008A22.013 22.013 0 0 1 56.955 79.27m18.966 138.858H37.95V95.967h37.97v122.16ZM237.033.018H18.89C8.58-.098.125 8.161-.001 18.471v219.053c.122 10.315 8.576 18.582 18.89 18.474h218.144c10.336.128 18.823-8.139 18.966-18.474V18.454c-.147-10.33-8.635-18.588-18.966-18.453"
+                    fill="#0A66C2"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://wa.me/?text=Podes ayudar a suri entrando a el siguiente link%20http://surisorteo.alwaysdata.net"
+                target="_blank"
+              >
+                <svg
+                  viewBox="0 0 256 259"
+                  width="30"
+                  height="32"
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="xMidYMid"
+                >
+                  <path
+                    d="m67.663 221.823 4.185 2.093c17.44 10.463 36.971 15.346 56.503 15.346 61.385 0 111.609-50.224 111.609-111.609 0-29.297-11.859-57.897-32.785-78.824-20.927-20.927-48.83-32.785-78.824-32.785-61.385 0-111.61 50.224-110.912 112.307 0 20.926 6.278 41.156 16.741 58.594l2.79 4.186-11.16 41.156 41.853-10.464Z"
+                    fill="#00E676"
+                  />
+                  <path
+                    d="M219.033 37.668C195.316 13.254 162.531 0 129.048 0 57.898 0 .698 57.897 1.395 128.35c0 22.322 6.278 43.947 16.742 63.478L0 258.096l67.663-17.439c18.834 10.464 39.76 15.347 60.688 15.347 70.453 0 127.653-57.898 127.653-128.35 0-34.181-13.254-66.269-36.97-89.986ZM129.048 234.38c-18.834 0-37.668-4.882-53.712-14.648l-4.185-2.093-40.458 10.463 10.463-39.76-2.79-4.186C7.673 134.63 22.322 69.058 72.546 38.365c50.224-30.692 115.097-16.043 145.79 34.181 30.692 50.224 16.043 115.097-34.18 145.79-16.045 10.463-35.576 16.043-55.108 16.043Zm61.385-77.428-7.673-3.488s-11.16-4.883-18.136-8.371c-.698 0-1.395-.698-2.093-.698-2.093 0-3.488.698-4.883 1.396 0 0-.697.697-10.463 11.858-.698 1.395-2.093 2.093-3.488 2.093h-.698c-.697 0-2.092-.698-2.79-1.395l-3.488-1.395c-7.673-3.488-14.648-7.674-20.229-13.254-1.395-1.395-3.488-2.79-4.883-4.185-4.883-4.883-9.766-10.464-13.253-16.742l-.698-1.395c-.697-.698-.697-1.395-1.395-2.79 0-1.395 0-2.79.698-3.488 0 0 2.79-3.488 4.882-5.58 1.396-1.396 2.093-3.488 3.488-4.883 1.395-2.093 2.093-4.883 1.395-6.976-.697-3.488-9.068-22.322-11.16-26.507-1.396-2.093-2.79-2.79-4.883-3.488H83.01c-1.396 0-2.79.698-4.186.698l-.698.697c-1.395.698-2.79 2.093-4.185 2.79-1.395 1.396-2.093 2.79-3.488 4.186-4.883 6.278-7.673 13.951-7.673 21.624 0 5.58 1.395 11.161 3.488 16.044l.698 2.093c6.278 13.253 14.648 25.112 25.81 35.575l2.79 2.79c2.092 2.093 4.185 3.488 5.58 5.58 14.649 12.557 31.39 21.625 50.224 26.508 2.093.697 4.883.697 6.976 1.395h6.975c3.488 0 7.673-1.395 10.464-2.79 2.092-1.395 3.487-1.395 4.882-2.79l1.396-1.396c1.395-1.395 2.79-2.092 4.185-3.487 1.395-1.395 2.79-2.79 3.488-4.186 1.395-2.79 2.092-6.278 2.79-9.765v-4.883s-.698-.698-2.093-1.395Z"
+                    fill="#FFF"
+                  />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
+        <img src="/img/suri.webp" alt="suri" />
       </div>
-      <img src="/img/suri.webp" alt="suri">
     </div>
-  </div>
 
-  <div id="sorteo" class="sorteo">
-    <h2>El Sorteo</h2>
-    <p class="info">El sorteo se realizara con los números de la lotería de Cordoba en la edición Nocturna
-      del dia lunes 12 de agosto</p>
+    <section id="sorteo">
+      <div class="sorteo">
+        <h2>El Sorteo</h2>
+        <p class="info">
+          El sorteo se realizara con los números de la lotería de Cordoba en la
+          edición Nocturna del dia lunes 12 de agosto
+        </p>
 
-    <p class="info"> Para participar solo debes hacer click 👆 en el número/s disponibles <span
-        class="color-verde"></span> que quieras elegir y luego haz click en pedir números así nos avisa por WhatsApp.
-    </p>
-    <p class="info">Conoce los <a class="link" href="#premios">Premios <svg xmlns="http://www.w3.org/2000/svg"
-          height="30px" viewBox="0 -960 960 960" width="30px" fill="#e8eaed">
-          <path
-            d="M160-80v-440H80v-240h208q-5-9-6.5-19t-1.5-21q0-50 35-85t85-35q23 0 43 8.5t37 23.5q17-16 37-24t43-8q50 0 85 35t35 85q0 11-2 20.5t-6 19.5h208v240h-80v440H160Zm400-760q-17 0-28.5 11.5T520-800q0 17 11.5 28.5T560-760q17 0 28.5-11.5T600-800q0-17-11.5-28.5T560-840Zm-200 40q0 17 11.5 28.5T400-760q17 0 28.5-11.5T440-800q0-17-11.5-28.5T400-840q-17 0-28.5 11.5T360-800ZM160-680v80h280v-80H160Zm280 520v-360H240v360h200Zm80 0h200v-360H520v360Zm280-440v-80H520v80h280Z" />
-        </svg></a></p>
+        <p class="info">
+          Para participar solo debes hacer click 👆 en el número/s disponibles
+          <span class="color-verde"></span> que quieras elegir y luego haz click
+          en pedir números así nos avisa por WhatsApp.
+        </p>
+        <p class="info">
+          Conoce los
+          <a class="link" href="#premios"
+            >Premios
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="30px"
+              viewBox="0 -960 960 960"
+              width="30px"
+              fill="#e8eaed"
+            >
+              <path
+                d="M160-80v-440H80v-240h208q-5-9-6.5-19t-1.5-21q0-50 35-85t85-35q23 0 43 8.5t37 23.5q17-16 37-24t43-8q50 0 85 35t35 85q0 11-2 20.5t-6 19.5h208v240h-80v440H160Zm400-760q-17 0-28.5 11.5T520-800q0 17 11.5 28.5T560-760q17 0 28.5-11.5T600-800q0-17-11.5-28.5T560-840Zm-200 40q0 17 11.5 28.5T400-760q17 0 28.5-11.5T440-800q0-17-11.5-28.5T400-840q-17 0-28.5 11.5T360-800ZM160-680v80h280v-80H160Zm280 520v-360H240v360h200Zm80 0h200v-360H520v360Zm280-440v-80H520v80h280Z"
+              /></svg
+          ></a>
+        </p>
+      </div>
 
-    <!-- <div class="numeros">
+      <!-- <div class="numeros">
       <% numeros.forEach(numero=> { %>
         <button data-numero="<%= numero.numero %>" data-estado="<%= numero.estado %>" data-esadmin="<%= isAdmin %>"
           data-nombre="<% if (isAdmin) { %><%= tachadoMap[numero.numero] ? tachadoMap[numero.numero][0].nombre : '' %><% } %>"
@@ -188,131 +310,172 @@
         </button>
         <% }); %>
     </div> -->
-  </div>
+      <div id="ganadores" class="ganadores">
+        <h2>Ganadores</h2>
+        <table>
+          <tr class="impar">
+            <td>1er</td>
+            <td>20</td>
+            <td>Mariano Virche</td>
+          </tr>
+          <tr>
+            <td>2do</td>
+            <td>01</td>
+            <td>Diego Muñoz</td>
+          </tr>
+          <tr class="impar">
+            <td>3er</td>
+            <td>83</td>
+            <td>Diego Salguero</td>
+          </tr>
+          <tr>
+            <td>4to</td>
+            <td>75</td>
+            <td>Elba Primo</td>
+          </tr>
+          <tr class="impar">
+            <td>5to</td>
+            <td>81</td>
+            <td>Norma Primo</td>
+          </tr>
+        </table>
+      </div>
 
-  <div id="ganadores" class="ganadores">
-    <h2>Ganadores</h2>
-    <table>
-      <tr class="impar">
-        <td>1er</td>
-        <td>20</td>
-        <td>Mariano Virche</td>
-      </tr>
-      <tr>
-        <td>2do</td>
-        <td>01</td>
-        <td>Diego Muñoz</td>
-      </tr>
-      <tr class="impar">
-        <td>3er</td>
-        <td>83</td>
-        <td>Diego Salguero</td>
-      </tr>
-      <tr>
-        <td>4to</td>
-        <td>75</td>
-        <td>Elba Primo</td>
-      </tr>
-      <tr class="impar">
-        <td>5to</td>
-        <td>81</td>
-        <td>Norma Primo</td>
-      </tr>
-    </table>
-  </div>
+      <div id="premios" class="premios">
+        <h2>Premios Sorteo 12 de agosto 2024</h2>
+        <div class="premios-list">
+          <div class="premios-card">
+            <p>
+              Premio del
+              <a
+                href="https://www.instagram.com/elrincon.de.irma/"
+                target="_blank"
+                >Rincon de Irma</a
+              >
+            </p>
+          </div>
+          <div class="premios-card">
+            <p>
+              Kit de nutrición (shampoo + crema nutrición) <br />
+              <a href="#">Peluqueria Natalia Manzzini</a>
+            </p>
+          </div>
+          <div class="premios-card">
+            <p>
+              Uñas, masajes, limpieza facial o permanente de pestañas <br /><a
+                href="https://www.instagram.com/bellesfemme.estetica/"
+                target="_blank"
+                >Bellesfemme.Estetica
+              </a>
+            </p>
+          </div>
+          <div class="premios-card">
+            <p>
+              Regalo sorpresa de
+              <a href="https://www.instagram.com/l_l.home/" target="_blank"
+                >L&L Home</a
+              >
+            </p>
+          </div>
+          <div class="premios-card">
+            <p>
+              Regalo de
+              <a
+                href="https://www.instagram.com/lindacatalina_/"
+                target="_blank"
+                >Linda Catalina Ind. Femenina
+              </a>
+              (Voucher de $10000)
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <div id="premios" class="premios">
-    <h2>Premios Sorteo 12 de agosto 2024</h2>
-    <div class="premios-list">
-      <div class="premios-card">
-        <p>Premio del <a href="https://www.instagram.com/elrincon.de.irma/" target="_blank">Rincon de Irma</a></p>
-      </div>
-      <div class="premios-card">
-        <p>Kit de nutrición (shampoo + crema nutrición) <br> <a href="#">Peluqueria Natalia Manzzini</a></p>
-      </div>
-      <div class="premios-card">
-        <p>Uñas, masajes, limpieza facial o permanente de pestañas <br><a
-            href="https://www.instagram.com/bellesfemme.estetica/" target="_blank">Bellesfemme.Estetica </a>
-        </p>
-      </div>
-      <div class="premios-card">
-        <p>Regalo sorpresa de <a href="https://www.instagram.com/l_l.home/" target="_blank">L&L Home</a></p>
-      </div>
-      <div class="premios-card">
-        <p>Regalo de <a href="https://www.instagram.com/lindacatalina_/" target="_blank">Linda Catalina Ind.
-            Femenina </a>
-          (Voucher de $10000)</p>
-      </div>
+    <div id="contacto" class="contacto">
+      <h2>Formas de contacto</h2>
+      <table>
+        <tr>
+          <td colspan="2">Telefonos</td>
+        </tr>
+        <tr>
+          <td>Agustin</td>
+          <td id="agustin" class="copiar-al-portapapeles" title="Copiar">
+            (351) 3075338
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e8eaed"
+            >
+              <path
+                d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z"
+              />
+            </svg>
+          </td>
+        </tr>
+        <tr>
+          <td>Jorgelina</td>
+          <td id="jorgelina" class="copiar-al-portapapeles" title="Copiar">
+            (351) 2270298
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e8eaed"
+            >
+              <path
+                d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z"
+              />
+            </svg>
+          </td>
+        </tr>
+
+        <tr></tr>
+        <tr>
+          <td colspan="2">Alias</td>
+        </tr>
+        <tr>
+          <td
+            colspan="2"
+            id="alias"
+            class="copiar-al-portapapeles"
+            title="Copiar"
+          >
+            JOR.HATHA
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e8eaed"
+            >
+              <path
+                d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z"
+              />
+            </svg>
+          </td>
+        </tr>
+      </table>
     </div>
-  </div>
 
+    <div id="copiado-popup" class="copiado-popup">
+      <p>Copiado</p>
+    </div>
 
+    <div id="details-popup" class="details-popup"></div>
 
-  <div id="contacto" class="contacto">
-    <h2>Formas de contacto</h2>
-    <table>
-      <tr>
-        <td colspan="2">Telefonos</td>
-      </tr>
-      <tr>
-        <td>
-          Agustin
-        </td>
-        <td id="agustin" class="copiar-al-portapapeles" title="Copiar">
-          (351) 3075338 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-            fill="#e8eaed">
-            <path
-              d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z" />
-          </svg>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Jorgelina
-        </td>
-        <td id="jorgelina" class="copiar-al-portapapeles" title="Copiar">
-          (351) 2270298 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-            fill="#e8eaed">
-            <path
-              d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z" />
-          </svg>
-        </td>
-      <tr>
-      <tr>
-        <td colspan="2">
-          Alias
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2" id="alias" class="copiar-al-portapapeles" title="Copiar">
-          JOR.HATHA <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-            fill="#e8eaed">
-            <path
-              d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z" />
-          </svg>
-        </td>
-      </tr>
-    </table>
-
-
-  </div>
-
-  <div id="copiado-popup" class="copiado-popup">
-    <p>Copiado</p>
-  </div>
-
-  <div id="details-popup" class="details-popup"></div>
-
-  <% if (!isAdmin) { %>
+    <% if (!isAdmin) { %>
     <a id="sendButton" class="send-button" href="#">Pedir números</a>
     <% } else { %>
-      <a id="formButton" class="send-button" href="#">Tachar</a>
-      <% } %>
+    <a id="formButton" class="send-button" href="#">Tachar</a>
+    <% } %>
 
-        <footer>
-          <p>Realizado por Agustin Yedro para <i>Suri</i> con 💗 </p>
-        </footer>
-        <script src="/js/script.js"></script>
-</body>
-
+    <footer>
+      <p>Realizado por Agustin Yedro para <i>Suri</i> con 💗</p>
+    </footer>
+    <script src="/js/script.js"></script>
+  </body>
 </html>

@@ -8,28 +8,29 @@
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
   <body class="admin-dashboard">
-    <h1>Registrar Persona y Números Tachados</h1>
-    <form action="/admin/persona" method="POST">
-      <label for="nombre">Nombre:</label>
-      <div id="label-nombre">
-        <input type="text" id="nombre" name="nombre" required />
-        <div id="autocomplete-results" class="autocomplete-results"></div>
-      </div>
-      <br />
-      <label for="telefono">Teléfono:</label>
-      <input type="text" id="telefono" name="telefono" required />
-      <br />
-      <label for="numeros">Números Tachados:</label>
-      <input
-        type="text"
-        id="numeros"
-        name="numeros"
-        value="<%= numeros %>"
-        readonly
-      />
-      <br />
-      <button type="submit">Registrar</button>
-    </form>
+    <aside>
+      <nav>
+        <a id="btn-ingresar-persona" href="#">Ingresar personas</a>
+      </nav>
+    </aside>
+    <template id="ingresar-persona-template">
+      <h1>Registrar Persona y Números Tachados</h1>
+      <form action="/admin/persona" method="POST">
+        <label for="nombre">Nombre:</label>
+        <div id="label-nombre">
+          <input type="text" id="nombre" name="nombre" required />
+          <div id="autocomplete-results" class="autocomplete-results"></div>
+        </div>
+        <br />
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" name="telefono" required />
+        <br />
+        <label for="numeros">Números Tachados:</label>
+        <input type="text" id="numeros" name="numeros" value="<%= numeros %>" />
+        <br />
+        <button type="submit">Registrar</button>
+      </form>
+    </template>
     <script src="/js/search.js"></script>
   </body>
 </html>
