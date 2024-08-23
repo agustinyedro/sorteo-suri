@@ -5,14 +5,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/dashboard.css" />
   </head>
   <body class="admin-dashboard">
     <aside>
       <nav>
-        <a id="btn-ingresar-persona" href="#">Ingresar personas</a>
+        <a id="ingresar-persona" class="btn" href="#">Ingresar personas</a>
+        <a id="crear-sorteo" class="btn" href="#">Crear sorteo</a>
+        <a id="realizar-sorteo" class="btn" href="#">Realizar sorteo</a>
       </nav>
     </aside>
+    <div id="content" class="content"></div>
     <template id="ingresar-persona-template">
       <h1>Registrar Persona y Números Tachados</h1>
       <form action="/admin/persona" method="POST">
@@ -31,6 +34,50 @@
         <button type="submit">Registrar</button>
       </form>
     </template>
+    <template id="crear-sorteo-template">
+      <form action="/admin/crear-sorteo" method="POST">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required />
+        <br />
+        <label for="cantidad_numeros">Cantidad de numeros:</label>
+        <input type="number" id="numeros" name="cantidad_numeros" required />
+        <br />
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" required />
+        <br />
+        <button type="submit">Crear Sorteo</button>
+      </form>
+    </template>
+    <template id="realizar-sorteo-template">
+      <form action="">
+        <label for="sorteo">Sorteo:</label>
+        <select id="sorteo" name="sorteo">
+          <% sorteos.forEach((sorteo) => { %>
+          <option value="<%= sorteo.sorteo_id %>"><%= sorteo.nombre %></option>
+          <% }); %>
+        </select>
+        <label for="cantidad_gandaores">Cantidad de ganadores:</label>
+        <input
+          type="number"
+          id="cantidad_ganadores"
+          name="cantidadGanadores"
+          required
+        />
+        <br />
+        <label for="suplentes">Suplentes:</label>
+        <input type="number" id="suplentes" name="cantidadSuplentes" required />
+        <br />
+        <button type="submit" id="realizar-sorteo-submit">
+          Realizar Sorteo
+        </button>
+      </form>
+    </template>
+    <% if (typeof message !== 'undefined') { %>
+
+    <div id="popup" class="popup"><p><%= message %></p></div>
+    <% } %>
+
+    <script type="module" src="/js/dashboard.js"></script>
     <script src="/js/search.js"></script>
   </body>
 </html>

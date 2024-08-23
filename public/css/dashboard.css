@@ -1,0 +1,47 @@
+@import url('https://cdn.jsdelivr.net/npm/@fontsource-variable/outfit@latest/index.css');
+
+:root {
+    font-family: 'Outfit Variable', sans-serif;
+    --colorlight: #333;
+    --colorFont: #f5f5f5;
+    --colornav: #131212;
+}
+
+body {
+    background-color: var(--colorlight);
+
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+
+    aside {
+        grid-column: 1 / 2;
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: start;
+            margin-top: 5rem;
+
+
+            a {
+                text-decoration: none;
+                color: var(--colorFont);
+                font-size: 1.5rem;
+                font-weight: 700;
+
+                &.active {
+                    background-color: var(--colornav);
+                }
+
+                &:hover {
+                    background-color: var(--colornav);
+                }
+            }
+        }
+    }
+
+    .content {
+        grid-column: 2 / -1;
+    }
+}
