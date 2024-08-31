@@ -23,6 +23,7 @@ router.post("/login", async (req, res) => {
 
       // Obtener los números tachados y construir el mapa
       const sorteos = await Sorteo.findAll();
+      console.log(sorteos);
       const numeros = await Rifa.findAll();
       const tachados = await Tachado.findAll({
         include: [Personas],

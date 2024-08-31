@@ -1,5 +1,3 @@
-import realizarSorteo from "../../src/helpers/realizarSorteo";
-
 document.querySelectorAll(".btn").forEach((button) => {
   button.addEventListener("click", (e) => {
     e.preventDefault();
@@ -36,7 +34,13 @@ function updateShadowRoot(elementId, templateSuffix, activeButton) {
   activeButton.classList.add("active");
 }
 
-const realizarSorteoBtn = document.getElementById("realizar-sorteo-btn");
-realizarSorteoBtn.addEventListener("click", async () => {
-  await realizarSorteo();
+const themeToggle = document.getElementById("toogle-btn");
+
+themeToggle.addEventListener("click", () => {
+  console.log("click");
+  toggleTheme();
 });
+function toggleTheme() {
+  document.documentElement.dataset.theme =
+    document.documentElement.dataset.theme === "dark" ? "" : "dark";
+}
