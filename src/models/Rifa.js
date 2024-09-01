@@ -5,9 +5,14 @@ const Sorteo = require("./Sorteo");
 const Rifa = sequelize.define(
   "Rifa",
   {
+    id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+    },
     numero: {
       type: DataTypes.INTEGER,
-      primaryKey: true,
+      allowNull: false,
     },
     estado: {
       type: DataTypes.ENUM("disponible", "tachado"),

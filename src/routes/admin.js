@@ -23,7 +23,6 @@ router.post("/login", async (req, res) => {
 
       // Obtener los números tachados y construir el mapa
       const sorteos = await Sorteo.findAll();
-      console.log(sorteos);
       const numeros = await Rifa.findAll();
       const tachados = await Tachado.findAll({
         include: [Personas],
@@ -132,12 +131,14 @@ router.post("/crear-sorteo", async (req, res) => {
   const { nombre, cantidad_numeros, fecha } = req.body;
 
   try {
+    // Crear un nuevo sorteo en la base de datos
     const nuevoSorteo = await Sorteo.create({
       nombre,
       cantidad_numeros,
       fecha,
     });
 
+    // Generar los números para el sorteo
     const numeros = [];
     for (let i = 1; i <= cantidad_numeros; i++) {
       numeros.push({
@@ -146,17 +147,35 @@ router.post("/crear-sorteo", async (req, res) => {
         sorteo_id: nuevoSorteo.sorteo_id,
       });
     }
+
+    // Insertar los números generados en la tabla Rifa
     await Rifa.bulkCreate(numeros);
 
+    // Obtener todos los números actualizados de la tabla Rifa para mostrar en la vista
+    const numerosActualizados = await Rifa.findAll({
+      where: {
+        sorteo_id: nuevoSorteo.sorteo_id,
+      },
+    });
+
+    const sorteos = await Sorteo.findAll();
+
+    // Renderizar la vista 'admin-dashboard' con la información necesaria
     res.render("admin-dashboard", {
       message: "Sorteo creado y números generados exitosamente.",
       isCreate: false,
+      numeros: numerosActualizados,
+      sorteos, 
     });
   } catch (error) {
     console.error("Error al crear el sorteo y generar números:", error);
+    const sorteos = await Sorteo.findAll();
+    // En caso de error, renderizar la vista con un mensaje de error y pasar un array vacío para 'numeros'
     res.render("admin-dashboard", {
       message: "Hubo un error al crear el sorteo. Inténtalo nuevamente.",
       isCreate: true,
+      numeros: [],
+      sorteos,// Asegurarse de pasar un valor predeterminado para evitar errores de referencia
     });
   }
 });

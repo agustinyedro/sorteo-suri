@@ -1,0 +1,9 @@
+###
+POST  http://localhost:3000/admin/crear-sorteo
+Content-Type: application/json
+
+{
+    "nombre":"agus",
+    "cantidad_numeros":20,
+    "fecha": 10-06-25
+}
